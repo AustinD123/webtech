@@ -1,13 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import "typeface-roboto-mono";
-import AuthPage from "./login.js";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './components/App'
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthPage />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+    <App/>
+  </React.StrictMode>
+)

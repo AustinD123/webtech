@@ -1,0 +1,111 @@
+/* Top Bar with Icons */
+.top-icons {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+  }
+  
+  .icon-link {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .icon-link:hover {
+    color: #FFA500; /* Hover effect with a golden color */
+  }
+  
+  /* Quickeys Heading */
+  .quickeys-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd700; /* Golden color */
+    text-align: center;
+    margin-top: 80px; /* Space between the header and the icons */
+    margin-bottom: 30px;
+  }
+  
+  /* Main Content Styles */
+  .mainContent {
+    margin-top: 60px; /* To avoid overlap with fixed icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .contentBox {
+    background-color: #333; /* Dark background for the content box */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  .aboutTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffd700; /* Golden text */
+  }
+  
+  .aboutContent {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #ccc; /* Lighter gray for the content */
+  }
+  
+  /* Info Icon */
+  .infoIcon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #8b5e3c; /* Brown circle */
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon Styles */
+  .icon {
+    font-size: 1.5rem;
+  }
+  
+  /* General Layout */
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c2c2c; /* Darker background */
+    color: #f4e1d2; /* Light beige text */
+  }
+  
+  /* Responsive Layout */
+  @media only screen and (max-width: 768px) {
+    .mainContent {
+      padding: 1rem;
+    }
+  
+    .contentBox {
+      padding: 1rem;
+    }
+  
+    .aboutTitle {
+      font-size: 1.5rem;
+    }
+  
+    .aboutContent {
+      font-size: 0.9rem;
+    }
+  }
+  

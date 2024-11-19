@@ -1,238 +1,154 @@
 /* General Styles */
-.container {
-  height: 100vh;
-  background-color: #493E3E;
-  color: white;
-  font-family: Arial, sans-serif;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f0e6; /* Light oak-inspired beige background */
+  color: #3e2e2c; /* Dark warm brown text for readability */
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #d4b895; /* Warm, light oak panel color */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 2rem;
   align-items: center;
-  background-color: #362D2D;
-}
-
-.logo {
+  width: 100%;
+  margin-bottom: 20px;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #593d2b; /* Rich walnut-brown header */
 }
 
-.nav {
+.header .logo {
+  text-transform: uppercase;
+}
+
+.header .leaderboard {
+  font-size: 1rem;
+  color: #2b1c1a; /* Slightly darker wood-inspired text */
   display: flex;
-  gap: 1rem;
   align-items: center;
-}
-
-.icon {
-  cursor: pointer;
+  gap: 5px;
 }
 
 /* Main Content */
 .mainContent {
-  max-width: 900px;
-  margin: 1rem auto;
-  padding: 0 2rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
 }
 
+.wordsArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #251706; /* Light oak texture */
+  color: #3e2e2c; /* Warm brown for text */
+  border-radius: 8px;
+  border: 2px solid #b39272; /* Darker wood border */
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.word {
+  margin-right: 8px;
+}
+
+.letter {
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.correctLetter {
+  background-color: #86b684; /* Muted green for correct letters */
+  color: #1e201f;
+}
+
+.currentLetter {
+  background-color: #9c7654; /* Warm amber for current letter */
+  color: #FFF;
+}
+
+.wordSpace {
+  margin-right: 8px;
+}
+
+/* Control Panel */
 .controlPanel {
   display: flex;
   justify-content: space-between;
-  background-color: #3A3030;
-  padding: 0.25rem 1rem;
-  border-radius: 8px;
   align-items: center;
+  background-color: #b58f72; /* Warm oak-inspired background */
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
 }
 
 .customizeButton {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background-color: #3A3030;
-  color: white;
+  background-color: #9c7654; /* Amber-gold button */
+  color: #FFF;
   border: none;
-  padding: 0.25rem 1rem;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.customizeButton:hover {
+  background-color: #c29f7b; /* Lighter amber on hover */
 }
 
 .timeControls {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
   align-items: center;
 }
 
 .timeButton {
-  background-color: transparent;
-  color: white;
-  border: none;
+  background-color: #cbb396;
+  color: #3e2e2c;
+  border: 1px solid #b39272;
+  padding: 8px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.timeButton:hover {
+  background-color: #b39272;
+  color: #FFF;
 }
 
 .selectedTime {
-  background-color: #5A4F4F;
-  border-radius: 4px;
+  background-color: #8e6d52; /* Darker oak tone for selected time */
+  color: #FFF;
 }
-
-.textArea {
-  background-color: #D4C5BB;
-  color: #333;
-  padding: 1rem;
-  border-radius: 8px;
-  height: 80px;
-  font-size: 1rem;
-  line-height: 1.3;
-  white-space: pre-wrap;
-  overflow: hidden;
-}
-
-/* Keyboard Styles */
-.keyboard {
-  max-width: 700px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 8px;
-  background-color: #090707;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  border: 6px solid #4A4A4A;
-}
-
-.keyRow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3px;
-}
-
-.key {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #D4C5BB;
-  border: 1px solid #8B7355;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #2C2424;
-}
-
-.specialKey {
-  width: 60px;
-}
-
-.longKey {
-  width: 80px;
-}
-
-.spaceBar {
-  width: 180px;
-}
-
-.wordsArea {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.word {
-  display: flex;
-}
-
-.letter {
-  padding: 2px 4px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-.correctLetter {
-  background-color: lightgreen; /* Highlight correct letters */
-}
-
-.currentLetter {
-  background-color: lightblue; /* Highlight the letter being typed */
-}
-
-.wordSpace {
-  width: 10px; /* Add space between words */
-}
-
-.wordsArea {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 2rem; /* Increased font size */
-  line-height: 3rem; /* Increased line height for readability */
-  padding: 20px; /* Added padding for spacing */
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  max-height: 300px;
-  overflow-y: auto; /* Added scroll for overflow */
-  background-color: #f9f9f9;
-}
-
-.word {
-  display: flex;
-}
-
-.letter {
-  padding: 2px 6px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-.correctLetter {
-  background-color: lightgreen; /* Highlight correct letters */
-}
-
-.currentLetter {
-  background-color: lightblue; /* Highlight the letter being typed */
-}
-
-.wordSpace {
-  width: 10px; /* Add space between words */
-}
-
-.typingGame .wordsArea {
-  height: 200px;
-  overflow-y: auto;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-}
-
-.typingGame .controls {
-  margin-bottom: 20px;
-}
-
-.typingGame .currentWord {
-  color: blue;
-  font-weight: bold;
-}
-
-.typingGame .correctLetter {
-  color: green;
-}
-
-.typingGame .letter {
-  display: inline-block;
-}
-
-.typingGame .wordSpace {
-  margin-right: 10px;
-}
+ 

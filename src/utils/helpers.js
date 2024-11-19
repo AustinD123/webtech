@@ -49,16 +49,13 @@ export const getCharByCode = (charCode) => {
 
 export const getProgress = ({ timeElapsedInMs, isFinished, selectedTime }) => {
   if (isFinished) {
-    return selectedTime; // Return the full selected time as progress when finished
+    return selectedTime; 
   }
 
-  // Convert selected time from seconds to milliseconds
   const totalTime = selectedTime * 1000;
   
-  // Calculate elapsed time as a fraction of the selected time
   const elapsedFraction = timeElapsedInMs / totalTime;
 
-  // Convert to the corresponding value in the range of [0, selectedTime]
   return (elapsedFraction * selectedTime).toFixed(2);
 };
 

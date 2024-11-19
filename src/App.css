@@ -51,3 +51,190 @@
 .mt-10-negative {
   margin-top: -10px;
 }
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5efe7; /* Light oak-inspired beige */
+  color: #3e2f2b; /* Warm dark brown */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #d7c4b1; /* Oak-inspired panel */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6a4f3d; /* Rich walnut header */
+}
+
+.header .logo {
+  text-transform: uppercase;
+}
+
+.header .leaderboard {
+  font-size: 1rem;
+  color: #4f3a2c; /* Subtle dark brown */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Main Content */
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+}
+
+.wordsArea {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #e7d4c4; /* Light oak panel */
+  color: #3e2f2b; /* Warm dark brown text */
+  border-radius: 8px;
+  border: 2px solid #c7a891; /* Darker wood border */
+  max-height: 200px;
+  overflow-y: auto;
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  text-align: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.word {
+  margin-right: 8px;
+}
+
+.letter {
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.correctLetter {
+  background-color: #7a9e78; /* Muted green for correct letters */
+  color: #2f2927;
+}
+
+.currentLetter {
+  background-color: #b8947a; /* Warm amber */
+  color: #2e2928;
+}
+
+.wordSpace {
+  margin-right: 8px;
+}
+
+/* Control Panel */
+.controlPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b58d6a; /* Warm oak panel */
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.customizeButton {
+  background-color: #8a6b4f; /* Amber button */
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.customizeButton:hover {
+  background-color: #b98a6c; /* Lighter amber */
+}
+
+.timeControls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.timeButton {
+  background-color: #d1b497; /* Light wood panel */
+  color: #3e2f2b;
+  border: 1px solid #b58d6a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.timeButton:hover {
+  background-color: #c7a891;
+  color: #2f2927;
+}
+
+.selectedTime {
+  background-color: #8a6b4f; /* Highlight selected time with darker wood tone */
+  color: #FFF;
+}
+
+/* Additional Layout Adjustments */
+.app {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #f5efe7; /* Light oak beige background */
+}
+
+.app-container {
+  width: 75%;
+  margin: 5%;
+}
+
+@media only screen and (max-width: 768px) {
+  .app-container {
+    font-size: 0.9em;
+    height: 70%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .app-container {
+    width: 60%;
+  }
+}
+
+.typing-area {
+  opacity: 0;
+  position: absolute;
+}

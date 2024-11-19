@@ -1,26 +1,26 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import "./App.css";
-import "./login.css";
-import './homepage.css';
-import { Clock, Home, User, FileText, Settings, Trophy } from 'lucide-react';
+
+import { Clock, Home, User, FileText, Settings, Trophy, NavigationIcon } from 'lucide-react';
 import InteractiveKeyboard from './keyboard';
-import { ONE_SECOND, KEYCODE_BACKSPACE, KEYCODE_ENTER, PROGRESS_RING_STROKE, PROGRESS_RING_RADIUS } from "./utils/constants";
 import {
-  getStats,
-  getHighlightClass,
-  getCharByCode,
-  getProgress,
-  getInitialGameState,
-  isUnusedKeyPress,
-  getElapsedTime,
+  ONE_SECOND, KEYCODE_BACKSPACE, KEYCODE_ENTER, PROGRESS_RING_STROKE, PROGRESS_RING_RADIUS
+} from "./utils/constants";
+import {
+  getStats, getHighlightClass, getCharByCode, getProgress, getInitialGameState, isUnusedKeyPress, getElapsedTime
 } from "./utils/helpers";
+import axios from 'axios';
+import { EmailContext } from './components/EmailContext';
 
 import Title from "./components/title";
 import Stats from "./components/stats";
 import Prompt from "./components/prompt";
 import ProgressRing from './components/progress-ring';
+import App from "./components/App";
 
-function App() {
+import Navigation from "./navigation";
+function App1() {
   const typingArea = useRef(null);
   const [gameState, setGameState] = useState(getInitialGameState());
   const [timeElapsedInMs, setTimeElapsedInMs] = useState(0);
@@ -29,6 +29,18 @@ function App() {
   const [selectedTime, setSelectedTime] = useState(120);
   const intervalRef = useRef(null);
   const timeAtStartRef = useRef(null);
+  const { email } = useContext(EmailContext); // Access email from context
+  const [wpm, setWpm] = useState(0);
+
+  const handleStoreWpm = () => {
+    if (email) {
+      axios.post('http://localhost:3001/store-wpm', { email, wpm })
+        .then(response => console.log("WPM stored:", response.data))
+        .catch(error => console.error("Error storing WPM:", error));
+    } else {
+      console.error("User email not found");
+    }
+  };
 
   useEffect(() => {
     return () => {
@@ -49,7 +61,7 @@ function App() {
       intervalRef.current = setInterval(() => {
         const currentTime = Date.now();
         const elapsedMs = currentTime - timeAtStartRef.current;
-        
+
         if (elapsedMs >= selectedTime * 1000) {
           clearInterval(intervalRef.current);
           setIsFinished(true);
@@ -79,28 +91,18 @@ function App() {
     timeAtStartRef.current = null;
   };
 
-  const {
-    typingPrompt,
-    correctEntries,
-    incorrectEntries,
-    isCorrectSequence,
-    keyStrokeCount,
-  } = gameState;
+  const { typingPrompt, correctEntries, incorrectEntries, isCorrectSequence, keyStrokeCount } = gameState;
 
-  const { wpm, accuracy } = getStats({
-    timeElapsedInMs,
-    correctEntries,
-    incorrectEntries,
-    keyStrokeCount,
+  const { wpm: calculatedWpm, accuracy } = getStats({
+    timeElapsedInMs, correctEntries, incorrectEntries, keyStrokeCount
   });
 
-  const progress = getProgress({
-    timeElapsedInMs,
-    isFinished,
-    selectedTime
-  });
-
+  const progress = getProgress({ timeElapsedInMs, isFinished, selectedTime });
   const highlightClass = getHighlightClass({ isCorrectSequence, isFinished });
+
+  useEffect(() => {
+    setWpm(calculatedWpm);
+  }, [calculatedWpm]);
 
   const handleOnKeyPress = ({ charCode }) => {
     if (isUnusedKeyPress({ charCode, isFinished })) {
@@ -147,7 +149,8 @@ function App() {
       });
     }
   };
-
+  
+  
   const handleOnKeyDown = ({ keyCode }) => {
     if (isFinished) {
       return;
@@ -168,7 +171,7 @@ function App() {
         const updatedTypingPrompt = [
           correctEntries[correctEntries.length - 1],
           ...typingPrompt,
-        ].join("");
+        ].join(" ");
 
         setGameState({
           ...gameState,
@@ -228,15 +231,9 @@ function App() {
       <div className="container">
         <header className="header">
           <div className="nav">
-            <Settings className="icon" size={20} />
-            <Home className="icon" size={20} />
-            <User className="icon" size={20} />
-            <FileText className="icon" size={20} />
-          </div>
-          <div className="logo">Quickkeys</div>
-          <div className="nav">
-            <span>DAILY LEADERBOARDS</span>
-            <Trophy className="icon" size={20} />
+            
+          <Navigation/>
+            
           </div>
         </header>
 
@@ -263,4 +260,4 @@ function App() {
   );
 }
 
-export default App;
+export default App1;

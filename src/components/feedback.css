@@ -1,0 +1,168 @@
+/* Top Bar with Icons */
+.top-icons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.icon-link {
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+  color: #FFA500; /* Hover effect with a golden color */
+}
+
+/* Info Icon - Bottom Left */
+.info-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+
+.info-icon:hover {
+  color: #FFA500;
+}
+
+/* Feedback Form Container */
+.feedback-container {
+  width: 400px;
+  margin: 50px auto;
+  background-color: #3A3A3A; /* Soft background to match app style */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Feedback Heading */
+.feedback-container h1 {
+  margin-bottom: 20px;
+  color: #FFD700; /* Golden accent for the heading */
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+/* Label */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Input and Textarea Fields */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #FFD700; /* Golden accent on focus */
+}
+
+/* Submit Button */
+.submit-button {
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #FFA500;
+}
+
+/* Thank You Message */
+.feedback-thankyou {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.feedback-thankyou h2 {
+  color: #ffea05; /* Green for success */
+  font-size: 1.5rem;
+}
+
+/* General Layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2C2C2C; /* Dark background for contrast */
+  color: #1b1616;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .feedback-container {
+    padding: 15px;
+  }
+
+  .feedback-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+  }
+
+  /* Ensure icons are properly spaced on smaller screens */
+  .top-icons {
+    top: 10px;
+    left: 10px;
+    gap: 10px;
+  }
+
+  .info-icon {
+    bottom: 10px;
+    left: 10px;
+  }
+}

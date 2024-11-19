@@ -1,0 +1,186 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #362f2d; /* Dark background */
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 700px;
+  background-color: #362f2d; /* Dark background */
+  color: #d5c3b3; /* Light beige text */
+}
+
+/* Navigation Bar */
+.navBar {
+  display: flex;
+  justify-content: center; /* Center the logo */
+  align-items: center;
+  background-color: #1d1918; /* Dark brown header */
+  padding: 1rem 2rem;
+  color: #d5c3b3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 70px;
+}
+
+.navIcons {
+  display: flex;
+  gap: 1rem;
+  position: absolute; /* Position icons to the left */
+  left: 2rem; /* Adjust left margin */
+}
+
+.navIcon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navIcon:hover {
+  color: #ff8d4d; /* Accent color on hover */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: absolute; /* Center the logo */
+  left: 50%;
+  transform: translateX(-50%); /* Center the logo */
+  color: #f0e6d2; /* Light beige color for logo */
+}
+
+/* Account Settings */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem 2rem; /* Add padding at top to account for fixed nav */
+  flex: 1;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profilePicture {
+  background-color: #1d1918;
+  color: #d5c3b3;
+  border-radius: 50%;
+  padding: 1rem;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addPicture {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.addIcon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.addText {
+  font-size: 1rem;
+  color: #d5c3b3;
+}
+
+.settingsContainer {
+  background-color: #1d1918; /* Dark brown for settings background */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  width: 600px;
+}
+
+.settingsTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #d5c3b3;
+  text-align: center;
+}
+
+.settingsItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.settingsItem label {
+  font-size: 1rem;
+  color: #d5c3b3;
+}
+
+.inputField {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #8b5e3c; /* Accent border color */
+  width: 60%;
+  background-color: #362f2d; /* Match background color */
+  color: #d5c3b3;
+}
+
+.editIcon {
+  cursor: pointer;
+  color: #ff8d4d; /* Accent color */
+}
+
+.settingsPrivacy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.toggleSwitch {
+  width: 30px;
+  height: 20px;
+  border-radius: 15px;
+  background-color: #8b5e3c; /* Accent color for off state */
+  cursor: pointer;
+}
+
+.toggleSwitch:checked {
+  background-color: #ff8d4d; /* Accent color for on state */
+}
+
+/* Info Icon */
+.infoIcon {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: #8b5e3c;
+  color: white;
+  border-radius: 70%;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infoIcon:hover {
+  background-color: #ff8d4d; /* Accent color on hover */
+}
